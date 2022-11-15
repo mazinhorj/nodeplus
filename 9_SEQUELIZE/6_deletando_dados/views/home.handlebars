@@ -1,0 +1,16 @@
+<h1>Fala, SEQUELADO!</h1>
+<h2>Cadastrados:</h2>
+<div class="container">
+    {{#each users}}
+        <div class="item">
+            <h2>{{this.nome}}</h2>
+            <ul><li>{{this.profissao}}</li></ul>
+            <div class="actions">
+                <a href="/users/{{this.id}}" class="details-btn">+ Detalhes</a>
+                <form action="/users/delete/{{this.id}}" method="post">
+                    <input type="submit" value="Excluir" class="delete-btn">
+                </form>
+            </div>
+        </div>
+    {{/each}}
+</div>

@@ -1,0 +1,11 @@
+<h2>{{task.title}}</h2>
+
+<p style="font-weight: bold;">Descrição da tarefa:</p>
+<p style="text-indent: 2rem;">{{task.description}}</p>
+
+<p style="font-weight: bold;">Status:</p>
+{{#if task.done}}
+<p style="color: rgb(3, 146, 3);">Conluída</p>
+{{else}}
+<p style="color: rgb(171, 0, 0);">Pendente</p>
+{{/if}}

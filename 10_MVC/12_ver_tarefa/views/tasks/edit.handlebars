@@ -1,0 +1,15 @@
+<h2>Editar Tarefa</h2>
+<form action="/tasks/edit" method="post">
+    <input type="hidden" name="id" value="{{task.id}}">
+    <div class="form-controle">
+        <label for="title">Tarefa:</label>
+        <input type="text" name="title" id="title" value="{{task.title}}">
+    </div>
+    <div class="form-controle">
+        <label for="description">Descrição:</label>
+        <textarea name="description" id="description">{{task.description}}</textarea>
+    </div>
+    <div class="actions">
+        <input type="submit" value="Atualizar" class="cad-btn">
+    </div>
+</form>

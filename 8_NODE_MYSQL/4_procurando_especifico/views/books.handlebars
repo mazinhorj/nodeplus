@@ -1,0 +1,20 @@
+<h1>Livros Cadastrados</h1>
+<div class="books-container">
+    <table id="estante">
+        <thead>
+            <th>Cadastro</th>
+            <th>Título</th>
+            <th>Nº de páginas</th>
+        </thead>
+        <tbody>
+            {{#each books}}
+                <tr>
+                    <td class="cad">{{this.id}}</td>
+                    <td class="tit"><a href="/books/{{this.id}}">{{this.titulo}}</a></td>
+                    <td class="pag">{{this.qtpag}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<p class="link"><a href="/">Novo Livro</a> | <a href="kdbook">Encontrar Livro</a></p>

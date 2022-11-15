@@ -1,0 +1,29 @@
+<h1>Livro escolhido</h1>
+<div class="books-container">
+    <table id="estante">
+        <thead>
+            <th>Cadastro</th>
+            <th>Título</th>
+            <th>Nº de páginas</th>
+        </thead>
+        <tbody>
+            {{#each book}}
+                <tr>
+                    <td class="id">{{this.id}}</td>
+                    <td class="tit">{{this.titulo}}</td>
+                    <td class="pag">{{this.qtpag}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="actions">
+                            <a href="/books/edit/{{this.id}}">Editar</a>
+                        </div>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <span>O cadastro é o {{book.id}}.</span>
+    
+</div>
+

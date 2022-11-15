@@ -1,0 +1,15 @@
+<h1>Título</h1>
+<p>Conteúdo</p>
+<p>Usuário: {{usuario.nome}} {{usuario.sobrenome}}</p>
+
+{{#if aprovado}}
+    <p>Parabéns! Cadastro aprovado.</p>
+{{else}}
+    <p>Cadastro em análise.</p>
+{{/if}}
+
+{{#if autenticado}}
+    <p>Logado com sucesso!</p>
+    <p>Clique <a href="/dashboard">aqui</a> para área de restrita.</p>
+{{/if}}
+

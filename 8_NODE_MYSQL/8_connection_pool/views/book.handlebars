@@ -1,0 +1,35 @@
+<h1>Livro escolhido</h1>
+<div class="books-container">
+    <table id="estante">
+        <thead>
+            <th>Cadastro</th>
+            <th>Título</th>
+            <th>Nº de páginas</th>
+        </thead>
+        <tbody>
+            {{#each book}}
+                <tr>
+                    <td class="id">{{this.id}}</td>
+                    <td class="tit">{{this.titulo}}</td>
+                    <td class="pag">{{this.qtpag}}</td>
+                </tr>
+                <tr>
+                    <td class="actions">Ações:</td>
+                    <td>
+                        <div class="actions">
+                            <a href="/books/edit/{{this.id}}">Editar</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="actions">
+                            <form action="/books/excluir/{{this.id}}" method="post">
+                                <input type="submit" value="Excluir">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>    
+</div>
+

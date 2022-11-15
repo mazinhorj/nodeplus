@@ -1,0 +1,58 @@
+// modulos externos
+const inquirer = require('inquirer')
+const chalk = require('chalk')
+
+// modulos internos
+const fs = require('fs')
+
+console.log("Starting Accounts") // apenas em DEV
+
+operation()
+
+function operation() {
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'action',
+                message: 'O que deseja fazer?',
+                choices: [
+                    'Criar conta',
+                    'Consultar saldo',
+                    'Depositar',
+                    'Sacar',
+                    'Sair'
+                ],
+            },
+        ])
+        .then((answer) => {
+            const action = answer['action']
+            console.log(action) // apenas em dev
+            if (action === 'Criar conta') {
+                criaConta()
+            }
+        })
+        .catch((err) => console.log(err))
+}
+
+//criando a conta
+
+function criaConta() {
+    console.log(chalk.bgGreen.black('Parabéns por escoler o banco M'))
+    console.log(chalk.green('Defina as opções da sua conta.'))
+    construirConta()
+}
+
+function construirConta() {
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'accountName',
+                message: 'Digite um nome para conta: '
+            }
+        ]).then(answer => {
+            console.log(answer)
+
+        }).catch(err => console.log(err))
+}

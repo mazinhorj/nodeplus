@@ -1,0 +1,43 @@
+<h1>Editar usuário: {{user.nome}}</h1>
+<form action="/users/update" method="post" class="form">
+    <input type="hidden" name="id" value="{{user.id}}">
+    <div class="form-controle">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="{{user.nome}}">
+    </div>
+    <div class="form-controle">
+        <label for="profissao">Profissão:</label>
+        <input type="text" name="profissao" value="{{user.profissao}}">
+    </div>
+    <div class="form-controle form-checkbox">
+        {{#if user.newsletter}}
+            <input type="checkbox" name="newsletter" checked>
+        {{else}}
+            <input type="checkbox" name="newsletter">
+        {{/if}}
+        <label for="newsletter">Deseja receber nossa newsletter? </label>
+    </div>
+    <input type="submit" value="Salvar Edição">
+</form>
+<div class="address-container">
+    <h2>Endereços:</h2>
+    <form action="/address/create" method="post">
+        <input type="hidden" name="UserId" value="{{user.id}}">
+        <div class="form-controle">
+            <label for="rua">Rua:</label>
+            <input type="text" name="rua" placeholder="Digite seu endereço">
+        </div>
+        <div class="form-controle">
+            <label for="numero">Número:</label>
+            <input type="text" name="numero" placeholder="Número">
+        </div>
+        <div class="form-controle">
+            <label for="cidade">Cidade:</label>
+            <input type="text" name="cidade" placeholder="Cidade">
+        </div>
+        <input type="submit" value="Cadastrar Endereço">
+    </form>
+</div>
+<div class="actions">
+    <a href="/">Voltar</a>
+</div>

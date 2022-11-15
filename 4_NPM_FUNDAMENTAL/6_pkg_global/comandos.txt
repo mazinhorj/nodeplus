@@ -1,0 +1,17 @@
+npm install -g [nome do pkg]
+
+
+instala o pacote globalmente
+
+
+>>> alguns pacotes além de serem importados/requeridos, devem ser linkados
+
+npm link [nome do pkg]
+
+
+*****************************************
+
+a vaca...
+
+npx cowsay "msg da vaquinha"
+npx cowsay -d "msg da vaquinha morta"
