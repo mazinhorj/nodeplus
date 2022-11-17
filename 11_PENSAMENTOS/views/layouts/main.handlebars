@@ -18,18 +18,29 @@
                 <ul>
                     <li><a href="/">Pensamentos</a></li>
                     {{!-- urls após autenticação --}}
-                    <li><a href="/login">Entrar</a></li>
-                    <li><a href="/register">Registrar</a></li>
+                    {{#if session.userid}}
+                        <li><a href="/pensamentos/dashboard">Dashboard</a></li>
+                        <li><a href="/logout">Sair</a></li>
+                    {{else}}
+                        <li><a href="/login">Entrar</a></li>
+                        <li><a href="/register">Registrar</a></li>
+                    {{/if}}
                 </ul>
             </nav>
         </header>
         <div class="container">
             {{!-- mensagens --}}
+            {{#if messages.message}}
+                <div class="message">
+                    {{messages.message}}
+                </div>
+            {{/if}}
+            {{!-- fim mensagens --}}
             {{{body}}}
         </div>
         <footer>
-            <p><span>Pensamentos</span> &copy; - 2022</p>
-            <p>By @MazinhoBigDaddy</p>
+            <p><span>Pensamentos </span> &copy; </p><br>
+            <p>By @MazinhoBigDaddy - 2022</p>
         </footer>
     </body>
 </html>
