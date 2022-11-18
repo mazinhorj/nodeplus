@@ -1,5 +1,15 @@
 <div class="home-header">
-    <h2>Todos os Pensamentos</h2>
+    {{#if search}}
+        <h2>Você buscou por: <span>{{search}}</span></h2>
+        {{#if pensamentosQtd}}
+            <p>Foram encontrados <span>{{pensamentosQtd}}</span> pensamentos.</p>
+        {{else}}
+            <p>Desculpe! Não encontrei um pensamento com o termo buscado.</p>
+        {{/if}}
+    {{else}}
+        <h2>Todos os Pensamentos</h2>
+        <p>Atualmente temos <span>{{pensamentosQtd}}</span> pensamentos cadastrados.</p>
+    {{/if}}
     <form action="/" method="get">
         <input type="text" name="search" placeholder="Procurando alguma coisa?">
         <button type="submit" class="btn">Buscar <i class="bi bi-search"></i></button>
@@ -9,12 +19,12 @@
         <form action="/" method="get">
             <input type="hidden" name="search" value="{{this.search}}">
             <input type="hidden" name="order" value="new">
-            <button type="submit" ><i class="bi bi-arrow-up"></i></button>
+            <button type="submit"><i class="bi bi-arrow-up"></i></button>
         </form>
         <form action="/" method="get">
             <input type="hidden" name="search" value="{{this.search}}">
             <input type="hidden" name="order" value="old">
-            <button type="submit" ><i class="bi bi-arrow-down"></i></button>
+            <button type="submit"><i class="bi bi-arrow-down"></i></button>
         </form>
         <a href="/">Limpar</a>
     </div>
